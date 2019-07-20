@@ -8,6 +8,55 @@
     width: 33%;
     display: inline-block;
     height: 100%;
+    vertical-align: top;
+    &.businessBlock {
+      ul {
+        list-style: none;
+        margin: 0px;
+        height: calc(100% - 170px);
+        overflow-y: scroll;
+        li {
+          position: relative;
+          height: 40px;
+          padding: 5px;
+          background: #f3f3f3;
+          box-shadow: 0px 0px 7px #00000014;
+          border: 1px solid #dedede;
+          border-radius: 5px;
+          margin-bottom: 5px;
+          img {
+            width: 40px;
+            position: absolute;
+          }
+          h2 {
+            padding: 0px;
+            padding-left: 40px;
+            margin: 0px;
+            line-height: 40px;
+            color: #386009;
+            font-family: helvetica;
+            font-size: 20px;
+          }
+          .stats {
+            position: absolute;
+            right: 6px;
+            top: 7px;
+            .produccion {
+              display: block;
+              text-align: right;
+              font-weight: bolder;
+              color: gray;
+            }
+            .gasto {
+              color: #c30000;
+              font-weight: bold;
+              font-family: helvetica;
+            }
+          }
+        }
+      }
+
+    }
   }
   &.softLeft {
     transition: none;
