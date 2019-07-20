@@ -1,5 +1,7 @@
-<app-info-menu></app-info-menu>
+<app-info-menu *ngIf="showMenues"></app-info-menu>
+
 <router-outlet></router-outlet>
-<app-main-menu></app-main-menu>
-<app-chat-button></app-chat-button>
-<app-players-button></app-players-button>
+
+<app-main-menu *ngIf="showMenues"></app-main-menu>
+<app-chat-button *ngIf="showMenues"></app-chat-button>
+<app-players-button *ngIf="showMenues"></app-players-button>
