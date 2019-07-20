@@ -42,21 +42,18 @@ export class EconomyComponent implements OnInit {
 
   moveTouch(evt) {
     this.prevSoftMove = true;
-    // console.log('MT', evt);
     const touches = evt.touches[0];
     if (touches) {
       const movement = touches.clientX - this.initialPosition;
       if (movement > 0) {
         const pmov = movement * 100 / this.fullWidth;
         if (pmov < 100 && (this.percentPosition + pmov) <= 0) {
-          console.log('PMOV', pmov, (this.percentPosition + pmov));
           this.leftSwipe = (this.percentPosition + pmov) + '%';
           this.lastLeftMovement = pmov;
         }
       } else {
         const pmov = movement * -1 * 100 / this.fullWidth;
         if (pmov < 100 && (this.percentPosition - pmov) >= -200) {
-          console.log('PMOV', pmov, (this.percentPosition - pmov));
           this.leftSwipe = (this.percentPosition - pmov) + '%';
           this.lastRightMovement = pmov;
         }
