@@ -14,6 +14,7 @@ import { ChatButtonComponent } from './components/chat-button/chat-button.compon
 import { InfoMenuComponent } from './components/info-menu/info-menu.component';
 import { PlayersButtonComponent } from './components/players-button/players-button.component';
 import { SlideButtonsComponent } from './components/slide-buttons/slide-buttons.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SlideButtonsComponent } from './components/slide-buttons/slide-buttons.
     ChatButtonComponent,
     InfoMenuComponent,
     PlayersButtonComponent,
-    SlideButtonsComponent
+    SlideButtonsComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
