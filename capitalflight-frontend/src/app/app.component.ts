@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
 
   title = 'capitalflight-frontend';
   showMenues: boolean;
+  chatOpened: boolean;
 
   constructor(private router: Router) {
     router.events.forEach((event) => {
@@ -17,8 +18,17 @@ export class AppComponent implements OnInit {
         this.showMenues = event.url !== '/' && event.url !== '/server';
       }
     });
+    this.chatOpened = false;
   }
 
   ngOnInit(): void { }
+
+  openChat() {
+    this.chatOpened = true;
+  }
+
+  closeChat() {
+    this.chatOpened = false;
+  }
 
 }
