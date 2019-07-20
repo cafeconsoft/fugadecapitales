@@ -1,12 +1,12 @@
 <div class="mainContentArea">
-  <div class="slider" [style]="sliderStyle">
-    <div class="block detailBlock" (swiperight)="industriesFD($event)">
+  <div class="slider" [class.softLeft]="prevSoftMove" [style.left]="leftSwipe" (touchstart)="startTouch($event)" (touchmove)="moveTouch($event)" (touchend)="endTouch($event)">
+    <div class="block detailBlock">
       aquí va el detalle
     </div>
-    <div class="block industriesBlock" (swipeleft)="business($event)" (swiperight)="detail($event)">
+    <div class="block industriesBlock">
       Aquí va el mapa
     </div>
-    <div class="block businessBlock" (swipeleft)="industriesFB($event)">
+    <div class="block businessBlock">
       Aquí va tu lista de empresas
     </div>
   </div>

@@ -10,29 +10,78 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EconomyComponent implements OnInit {
 
-  sliderStyle: string;
+  leftSwipe: string;
+  initialPosition: number;
+  fullWidth: number;
+  percentPosition: number;
+  minDespl = 25;
+  lastLeftMovement = 0;
+  lastRightMovement = 0;
+  prevSoftMove = false;
 
   constructor() {
-    this.sliderStyle = 'left: -100%';
   }
 
   ngOnInit() {
+    this.percentPosition = -100;
+    this.leftSwipe = this.percentPosition + '%';
+    this.fullWidth = document.body.offsetWidth;
   }
 
-  industriesFD(evt) {
-    this.sliderStyle = 'left: -100%';
+  startTouch(evt: any) {
+    const touches = evt.touches[0];
+    if (touches) {
+      this.initialPosition = touches.clientX;
+    }
   }
 
-  business(evt) {
-    this.sliderStyle = 'left: -200%';
+  moveTouch(evt) {
+    this.prevSoftMove = true;
+    // console.log('MT', evt);
+    const touches = evt.touches[0];
+    if (touches) {
+      const movement = touches.clientX - this.initialPosition;
+      if (movement > 0) {
+        const pmov = movement * 100 / this.fullWidth;
+        if (pmov < 100 && (this.percentPosition + pmov) <= 0) {
+          console.log('PMOV', pmov, (this.percentPosition + pmov));
+          this.leftSwipe = (this.percentPosition + pmov) + '%';
+          this.lastLeftMovement = pmov;
+        }
+      } else {
+        const pmov = movement * -1 * 100 / this.fullWidth;
+        if (pmov < 100 && (this.percentPosition - pmov) >= -200) {
+          console.log('PMOV', pmov, (this.percentPosition - pmov));
+          this.leftSwipe = (this.percentPosition - pmov) + '%';
+          this.lastRightMovement = pmov;
+        }
+      }
+    }
   }
 
-  detail(evt) {
-    this.sliderStyle = 'left: 0%';
-  }
+  endTouch(evt) {
+    this.prevSoftMove = false;
 
-  industriesFB(evt) {
-    this.sliderStyle = 'left: -100%';
+    let moved = false;
+
+    if (this.lastLeftMovement > this.minDespl) {
+      moved = true;
+      if (this.percentPosition + 100 <= 0) {
+        this.percentPosition += 100;
+      }
+    }
+
+    if (this.lastRightMovement > this.minDespl) {
+      moved = true;
+      if (this.percentPosition - 100 >= -200) {
+        this.percentPosition -= 100;
+      }
+    }
+
+    this.leftSwipe = this.percentPosition + '%';
+
+    this.lastLeftMovement = 0;
+    this.lastRightMovement = 0;
   }
 
 }

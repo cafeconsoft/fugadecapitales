@@ -9,4 +9,7 @@
     display: inline-block;
     height: 100%;
   }
+  &.softLeft {
+    transition: none;
+  }
 }
