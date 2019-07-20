@@ -13,6 +13,7 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { ChatButtonComponent } from './components/chat-button/chat-button.component';
 import { InfoMenuComponent } from './components/info-menu/info-menu.component';
 import { PlayersButtonComponent } from './components/players-button/players-button.component';
+import { SlideButtonsComponent } from './components/slide-buttons/slide-buttons.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PlayersButtonComponent } from './components/players-button/players-butt
     MainMenuComponent,
     ChatButtonComponent,
     InfoMenuComponent,
-    PlayersButtonComponent
+    PlayersButtonComponent,
+    SlideButtonsComponent
   ],
   imports: [
     BrowserModule,
