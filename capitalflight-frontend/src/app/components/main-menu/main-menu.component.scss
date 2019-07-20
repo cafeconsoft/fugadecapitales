@@ -1,0 +1,29 @@
+.mainCircle {
+  font-size: 40px;
+  border-radius: 50px;
+  border: 0px;
+  width: 80px;
+  height: 80px;
+}
+.circle {
+  font-size: 25px;
+  border-radius: 25px;
+  border: 0px;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+.greenButton {
+  background: linear-gradient(#61bc69, #4c9753);
+  color: #ffffffd1;
+  box-shadow: 1px 1px 3px #0000004a;
+}
+.greenButton.active {
+  background: linear-gradient(#43d950, #179122);
+  color: #ffffffc9;
+}
+.footerPosition {
+  position: fixed;
+  bottom: 0px;
+  left: calc(50% - 100px);
+}
