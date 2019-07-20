@@ -17,10 +17,28 @@
   background: linear-gradient(#61bc69, #4c9753);
   color: #ffffffd1;
   box-shadow: 1px 1px 3px #0000004a;
+  position: relative;
+  outline: none;
+  &::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #3ed14b;
+    display: block;
+    position: absolute;
+    left: calc(50% - 5px);
+    top: -15px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 1s;
+  }
 }
 .greenButton.active {
   background: linear-gradient(#43d950, #179122);
   color: #ffffffc9;
+  &::before {
+    opacity: 1;
+  }
 }
 .footerPosition {
   position: fixed;
