@@ -1,0 +1,61 @@
+.popupChat {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background: #f2f2f2;
+  border-radius: 5px;
+  border-bottom: 2px solid #a0e07a;
+  border-top: 2px solid #9cd778;
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 25px;
+    color: gray;
+  }
+  h3 {
+    margin: 11px;
+    font-size: 19px;
+    font-family: helvetica;
+    color: #4e4e4e;
+  }
+  ul{
+    list-style: none;
+    padding: 10px;
+    margin: 0px;
+    li {
+      background: white;
+      padding: 5px;
+      border-radius: 3px;
+      margin-bottom: 5px;
+      border: 1px solid #808080;
+      img {
+        width: 75px;
+        border-radius: 40px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .messageData{
+        width: calc(100% - 75px);
+        vertical-align: middle;
+        display: inline-block;
+        .name {
+          margin-left: 5px;
+          font-size: 18px;
+          font-weight: bolder;
+          font-family: helvetica;
+          color: gray;
+        }
+        .lastMessage {
+          margin-left: 5px;
+          font-size: 13px;
+          font-weight: 100;
+          font-family: helvetica;
+          color: gray;
+        }
+      }
+    }
+  }
+}
