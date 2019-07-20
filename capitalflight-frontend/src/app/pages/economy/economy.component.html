@@ -1,3 +1,4 @@
+<app-slide-buttons [altLeftButtonActive]="industry" [altRightButtonActive]="business" (altButtonEvent)="menuButton($event)"></app-slide-buttons>
 <div class="mainContentArea">
   <div class="slider" [class.softLeft]="prevSoftMove" [style.left]="leftSwipe" (touchstart)="startTouch($event)" (touchmove)="moveTouch($event)" (touchend)="endTouch($event)">
     <div class="block detailBlock">

@@ -19,6 +19,9 @@ export class EconomyComponent implements OnInit {
   lastRightMovement = 0;
   prevSoftMove = false;
 
+  industry: boolean;
+  business: boolean;
+
   constructor() {
   }
 
@@ -26,6 +29,8 @@ export class EconomyComponent implements OnInit {
     this.percentPosition = -100;
     this.leftSwipe = this.percentPosition + '%';
     this.fullWidth = document.body.offsetWidth;
+    this.business = false;
+    this.industry = true;
   }
 
   startTouch(evt: any) {
@@ -79,9 +84,23 @@ export class EconomyComponent implements OnInit {
     }
 
     this.leftSwipe = this.percentPosition + '%';
+    this.business = this.percentPosition === -200;
+    this.industry = this.percentPosition === -100;
 
     this.lastLeftMovement = 0;
     this.lastRightMovement = 0;
+  }
+
+  menuButton(button: number) {
+    if (button === 1) {
+      this.percentPosition = -200;
+      this.leftSwipe = this.percentPosition + '%';
+    } else {
+      this.percentPosition = -100;
+      this.leftSwipe = this.percentPosition + '%';
+    }
+    this.business = this.percentPosition === -200;
+    this.industry = this.percentPosition === -100;
   }
 
 }
