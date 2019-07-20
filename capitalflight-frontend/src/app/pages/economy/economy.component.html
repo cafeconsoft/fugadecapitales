@@ -1,4 +1,15 @@
-<app-info-menu></app-info-menu>
-<p>economy works!</p>
-<app-main-menu></app-main-menu>
-<app-chat-button></app-chat-button>
+<div class="mainContentArea">
+  <div class="slider" [style]="sliderStyle">
+    <div class="block detailBlock" (swiperight)="industriesFD($event)">
+      aquí va el detalle
+    </div>
+    <div class="block industriesBlock" (swipeleft)="business($event)" (swiperight)="detail($event)">
+      Aquí va el mapa
+    </div>
+    <div class="block businessBlock" (swipeleft)="industriesFB($event)">
+      Aquí va tu lista de empresas
+    </div>
+  </div>
+</div>
+
+<!-- (touchstart)="touchStartEvt($event)" (touchmove)="touchMoveEvt($event)" (touchend)="touchEndEvt($evt)" -->
